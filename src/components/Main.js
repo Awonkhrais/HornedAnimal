@@ -1,7 +1,8 @@
 import React from 'react';
 import Horned from './Horned';
 import HornedData from './data.json';
-import CardGroup from 'react-bootstrap/CardGroup'
+import CardGroup from 'react-bootstrap/CardGroup'=======
+
 
 
 class Main extends React.Component{
@@ -18,9 +19,13 @@ class Main extends React.Component{
     })}
        </CardGroup>
 
+
         </div>
         )
     }
 }
+
 export default Main;
+
+
 
