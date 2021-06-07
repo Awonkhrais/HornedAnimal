@@ -5,10 +5,16 @@ class Header extends React.Component{
 render(){
 return(
 
-<h1> Hello To My HornedBeasts </h1>
+
+<h1> Wellcome To My HornedBeasts </h1>
+
+
 
 )
 
     }
 }
+
 export default Header;
+
+
