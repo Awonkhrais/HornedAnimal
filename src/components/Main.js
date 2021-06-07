@@ -1,7 +1,7 @@
 import React from 'react';
 import Horned from './Horned';
 import HornedData from './data.json';
-import CardGroup from 'react-bootstrap/CardGroup'=======
+import CardGroup from 'react-bootstrap/CardGroup'
 
 
 
