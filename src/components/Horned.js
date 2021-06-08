@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
@@ -15,7 +13,8 @@ constructor(props) {
 increasNumOfHorned = () => {
     this.setState({
         numOfHorned : this.state.numOfHorned+1
-    })
+    });
+    this.props.openModal();
 }
 
 
@@ -28,7 +27,7 @@ render(){
              <img src={this.props.url} alt={this.props.description} title={this.props.title} />
              <p className='desc'>description: {this.props.description}</p> */}
 
-             <Card style={{ width: '18rem' }}>
+             <Card style={{ width: '18rem' , height:'35rem' }}>
              <Card.Img variant="top" src={this.props.url} onClick={this.increasNumOfHorned} />
              <Card.Body>
              <Card.Title>{this.props.title}</Card.Title>
