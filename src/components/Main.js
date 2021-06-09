@@ -5,7 +5,9 @@ import CardGroup from 'react-bootstrap/CardGroup'
 
 
 
+
 class Main extends React.Component {
+    
     render() {
         return (
 
@@ -15,13 +17,28 @@ class Main extends React.Component {
                 <CardGroup>
 
                     {this.props.HornedData.map((items, index) => {
+                        if( this.props.HornsNumber==='All'){
                         return (<Horned title={items.title}
                             description={items.description}
                             url={items.image_url}
-                            openModal={this.props.openModal}
+
+                            // openModal={this.props.openModal}
                             clickFunc={this.props.clickFunc}
 
                         />)
+                        }
+
+
+                        else if(items.horns == this.props.HornsNumber){
+                            return (<Horned title={items.title}
+                                description={items.description}
+                                url={items.image_url}
+    
+                                // openModal={this.props.openModal}
+                                clickFunc={this.props.clickFunc} 
+                         />)
+    
+                        }
                     })}
                 </CardGroup>
 

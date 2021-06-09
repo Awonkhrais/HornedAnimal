@@ -27,6 +27,19 @@ Finish time: 12 pm
 Actual time needed to complete: 9 hours
 
 
+# lab 4
+Number and name of feature: 
+ * 1: Filter by Numbers of Horns
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 6 pm 
+
+Finish time: 7:30 pm 
+
+Actual time needed to complete: 1:30 hours
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -2,8 +2,10 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HornedData from './components/data.json';
 import SelectedBeast from './components/SelectedBeast ';
+import Forms from './components/Form'
 
 
 
@@ -15,7 +17,9 @@ class App extends React.Component {
     this.state = {
       HornedData: HornedData,
       show: false,
-      SelectedBeast:'',
+      SelectedBeast: '',
+      HornsNumber: 'All',
+
 
 
 
@@ -23,26 +27,33 @@ class App extends React.Component {
     }
   }
 
-
+ 
 
   clickFunc = (title) => {
-    let SelectedBeast = HornedData.find(item =>{
-      if (item.title===title){
+    let SelectedBeast = HornedData.find(item => {
+      if (item.title === title) {
         return item;
       }
     })
     this.setState({
-     
-      SelectedBeast:SelectedBeast,
+
+      SelectedBeast: SelectedBeast,
       show: true,
 
     });
   };
 
-  
+
+  selectNumOfHorn = (event) => {
+    this.setState({
+      HornsNumber: event.target.value
+    });
+    // console.log(this.state.HornsNumber)
+  }
 
 
- 
+
+
   closeModal = () => {
     this.setState({ show: false });
   }
@@ -52,11 +63,13 @@ class App extends React.Component {
     return (
       <div className='container'>
         <Header />
-        <Main HornedData={this.state.HornedData} openModal={this.openModal} clickFunc={this.clickFunc} />
+        <Forms selectNumOfHorn={this.selectNumOfHorn} />
+        <Main HornedData={this.state.HornedData} HornsNumber={this.state.HornsNumber}
+          clickFunc={this.clickFunc} />
         <Footer />
         <SelectedBeast show={this.state.show}
           closeModal={this.closeModal}
-        
+
           SelectedBeast={this.state.SelectedBeast}
         />
       </div>
