@@ -10,48 +10,59 @@ import SelectedBeast from './components/SelectedBeast ';
 
 class App extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      dataArray: HornedData,
+      HornedData: HornedData,
       show: false,
-      // selectedBeast:{},
+      SelectedBeast:'',
 
-      // description:'',
-      // image_url:'',
-      // title:'',
+
 
 
     }
   }
 
-  openModal = () => {
-    this.setState({show:true});
-  }
+
+
+  clickFunc = (title) => {
+    let SelectedBeast = HornedData.find(item =>{
+      if (item.title===title){
+        return item;
+      }
+    })
+    this.setState({
+     
+      SelectedBeast:SelectedBeast,
+      show: true,
+
+    });
+  };
+
+  
+
+
+ 
   closeModal = () => {
-    this.setState({show:false});
+    this.setState({ show: false });
   }
 
-render(){
+  render() {
 
-  return(
-    <div className='container'>
-    <Header/>
-    <Main dataArray={this.state.dataArray} openModal={this.openModal}/>
-    <Footer/>
-    <SelectedBeast show={this.state.show}
-                closeModal={this.closeModal}
-                
-                   description={HornedData.description} 
-                   image_url={HornedData.image_url}
-                   title={HornedData.title}
-                   
+    return (
+      <div className='container'>
+        <Header />
+        <Main HornedData={this.state.HornedData} openModal={this.openModal} clickFunc={this.clickFunc} />
+        <Footer />
+        <SelectedBeast show={this.state.show}
+          closeModal={this.closeModal}
+        
+          SelectedBeast={this.state.SelectedBeast}
+        />
+      </div>
 
-                />
-    </div>
-
-  )
-}
+    )
+  }
 
 
 }
